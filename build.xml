@@ -36,7 +36,7 @@
         <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project,AllTests" name="build"/>
+    <target depends="build-subprojects,build-project,TestToDoList" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
@@ -75,7 +75,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="test.AllTests" todir="${junit.output.dir}"/>
+            <test name="TestToDoList" todir="${junit.output.dir}"/>
             <classpath refid="ToDoList.classpath"/>
         </junit>
     </target>
