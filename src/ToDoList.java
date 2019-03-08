@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ToDoList {
 
@@ -10,6 +11,16 @@ public class ToDoList {
 
 	public ArrayList<Item> getItems() {
 		return this.items;
+	}
+
+	public void deleteItem(String itemId) {
+		Iterator<Item> i = items.iterator();
+		while(i.hasNext()) {
+			Item item = i.next();
+			if (item.getId().equals(itemId)) {
+				i.remove();
+			}
+		}
 	}
 
 }
